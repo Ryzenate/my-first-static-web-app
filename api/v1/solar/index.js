@@ -41,7 +41,7 @@ const latestSolarActivity = () => ({
 app.http('solarData', {
     methods: ['GET'],
     authLevel: 'anonymous',
-    route: 'solar',
+    route: 'v1/solar',
     handler: async (request, context) => {
         context.log(`Solar activity request received for url "${request.url}"`);
 

@@ -3,7 +3,7 @@ const { app } = require('@azure/functions');
 app.http('health', {
     methods: ['GET'],
     authLevel: 'anonymous',
-    route: 'health',
+    route: 'v1/health',
     handler: async (request, context) => {
         context.log(`Health check requested from url "${request.url}"`);
 
@@ -14,8 +14,8 @@ app.http('health', {
             service: 'Azure Functions HTTP API',
             endpoints: {
                 default: '/',
-                health: '/api/health',
-                solar: '/api/solar'
+                health: '/v1/health',
+                solar: '/v1/solar'
             }
         };
 
